@@ -16,7 +16,7 @@ class KeywordExtractor(Resource):
 
 
 api.add_resource(KeywordExtractor, 
-	             '/',
+                 '/',
                  '/<string:language_code>')
 
 if __name__ == '__main__':
