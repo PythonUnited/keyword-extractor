@@ -1,6 +1,6 @@
 # Keyword extractor API
 
-Simple API which uses[Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/) 
+Simple API which uses [Flask-RESTful](https://flask-restful.readthedocs.io/en/latest/) 
 and [multi-rake](https://github.com/vgrabovets/multi_rake) to extract keywords from 
 text.
 
@@ -89,7 +89,7 @@ Optionally a language code can be specified, for example to extract keywords for
         ]
     ]
 
-When no language code is specified the language is guessed my the `multi-rake` library:
+When no language code is specified the language is guessed by the `multi-rake` library:
 
     curl -XGET http://localhost:5000/ -d text="Aunque esa manera puede no ser obvia al principio a menos que seas holandés."
     [
