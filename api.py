@@ -4,8 +4,15 @@ from flask_restful import Resource, Api
 from multi_rake import Rake
 
 
-app = Flask(__name__)
-api = Api(app)
+def create_app():
+    app = Flask(__name__)
+    api = Api(app)
+    api.add_resource(
+        KeywordExtractor,
+        '/',
+        '/<string:language_code>'
+    )
+    return app
 
 
 class KeywordExtractor(Resource):
@@ -18,9 +25,7 @@ class KeywordExtractor(Resource):
 
         return 'No text given', 400
 
-api.add_resource(KeywordExtractor,
-                 '/',
-                 '/<string:language_code>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app = create_app()
+    app.run(host ='0.0.0.0', debug=True)
