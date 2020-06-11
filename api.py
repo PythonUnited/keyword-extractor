@@ -12,10 +12,13 @@ class KeywordExtractor(Resource):
     def get(self, language_code=None):
         rake = Rake(language_code=language_code)
 
-        return rake.apply(request.form.get('text'))
+        text = request.form.get('text')
+        if text:
+            return rake.apply(text)
 
+        return 'No text given', 400
 
-api.add_resource(KeywordExtractor, 
+api.add_resource(KeywordExtractor,
                  '/',
                  '/<string:language_code>')
 
