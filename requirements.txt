@@ -8,7 +8,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.1
 MarkupSafe==1.1.1
 multi-rake==0.0.1
-numpy==1.18.1
+numpy==1.22.0
 pycparser==2.19
 pyrsistent==0.15.7
 pytz==2019.3
